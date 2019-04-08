@@ -217,6 +217,28 @@ public class T_Binerisasi_dan_chaincode {
 		    
 		    
 		}
+ public  int[] [] histogram (BufferedImage image) {
+            int w = image.getWidth();
+            int h = image.getHeight();
+            
+            int [][] histo = new int [h][1];
+            for (int i = 0; i < image.getHeight(); i++) {
+         int sum = 0;
+                for (int j = 0; j < image.getWidth(); j++) {
+                    Color c = new Color(image.getRGB(i, j));
+                    int red = (int) c.getRed();
+                    int green = (int) c.getGreen();
+                    int blue = (int) c.getBlue();
+                    if (green == 0 || red == 0 || blue == 0) {
+                        
+                        sum = sum +1;
+                    }
+                }
+                histo[w][0]=sum;
+     }
+     return histo;
+    
+}
 
 
 	   }
